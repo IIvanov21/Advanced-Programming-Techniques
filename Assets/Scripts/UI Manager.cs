@@ -9,15 +9,18 @@ public class UIManager : MonoBehaviour
 
     private Slider healthSlider;
 
-    private void OnEnable()
+    private void OnEnable()//Game Starts
     {
         playerManager.HealthChanged += UpdateHealthDisplay;
+        playerManager.HealthChanged += TestFunction;
 
     }
 
     private void OnDisable()
     {
         playerManager.HealthChanged -= UpdateHealthDisplay;
+        playerManager.HealthChanged -= TestFunction;
+
     }
 
     private void Awake()
@@ -28,5 +31,10 @@ public class UIManager : MonoBehaviour
     private void UpdateHealthDisplay(int newHealth)
     {
         healthSlider.value = newHealth;
+    }
+
+    private void TestFunction(int testValue)
+    {
+        Debug.Log("Test value is:" + testValue);
     }
 }
