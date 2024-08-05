@@ -15,8 +15,6 @@ public class PlayerManager : MonoBehaviour
 
     public int score = 0;
 
-
-
     //The main function which will call the delegate 
     public void TakeDamage(int damage)
     {
