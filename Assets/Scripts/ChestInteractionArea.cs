@@ -11,7 +11,7 @@ public class ChestInteractionArea : MonoBehaviour
     {
         if (other.CompareTag("Player"))//Ensure interaction works only with the player
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKey(KeyCode.E))
             {
                 chestInteraction?.Invoke();//We only want to call the event
             }

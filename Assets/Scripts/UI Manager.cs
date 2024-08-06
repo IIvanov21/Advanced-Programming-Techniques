@@ -16,7 +16,7 @@ public class UIManager : MonoBehaviour
 
     }
 
-    private void OnDisable()
+    private void OnDisable()//Game Ends
     {
         playerManager.HealthChanged -= UpdateHealthDisplay;
         playerManager.HealthChanged -= TestFunction;

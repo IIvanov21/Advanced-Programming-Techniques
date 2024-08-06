@@ -7,6 +7,8 @@ public class InteractionArea : MonoBehaviour
 {
     bool interacted=false;
     public UnityEvent interactionEvent;
+    public UnityEvent stayInteraction;
+
 
     void OnTriggerEnter(Collider other)
     {
@@ -16,6 +18,18 @@ public class InteractionArea : MonoBehaviour
             {
                 interactionEvent?.Invoke();
                 interacted=true;
+            }
+        }
+    }
+
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            if (Input.GetKey(KeyCode.E))
+            {
+                stayInteraction?.Invoke();
             }
         }
     }
