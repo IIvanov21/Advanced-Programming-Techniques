@@ -21,7 +21,7 @@ public class GameTimer : MonoBehaviour
         StartCoroutine(StartTimer());
     }
 
-    void Update()
+    void Update()//Main game loop
     {
         if (timer > 0 && startTimer)
         {
@@ -39,7 +39,7 @@ public class GameTimer : MonoBehaviour
         return string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 
-    IEnumerator StartTimer()
+    IEnumerator StartTimer()//This runs alongside the main game loop
     {
         countDownText.text="3";
         yield return new WaitForSeconds(1.0f);
